@@ -14,7 +14,12 @@ const HonestAbeApi = Object.create({}, {
   },
   "getCorporateDonations": {
     value: function() {
-      return $.ajax("http://localhost:3000/CorporateDonations")
+      return $.ajax("http://localhost:3000/CorporateDonations") //get corporate donations
+    }
+  },
+  "getBills": {
+    value: function() {
+      return $.ajax("http://localhost:3000/LegislativeBills") //get legislative bills
     }
   }
 })
