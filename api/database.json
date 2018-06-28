@@ -1,0 +1,122 @@
+{
+    "LegislativeBills": [
+        {
+            "legislativeBillId": 1,
+            "name": "Emancipation Proclamation",
+            "corporationId": 1
+        },
+        {
+            "legislativeBillId": 2,
+            "name": "Billy Bob Bill",
+            "corporationId": 2
+        },
+        {
+            "legislativeBillId": 3,
+            "name": "Clinton Bill",
+            "corporationId": 3
+        }
+    ],
+    "Donations": [
+        {
+            "donationId": 1,
+            "name": "The Get Bret to Update his Slack Picture",
+            "politicianId": 1,
+            "pacId": 1
+        },
+        {
+            "donationId": 2,
+            "name": "Nay Nay",
+            "politicianId": 3,
+            "pacId": 3
+        },
+        {
+            "donationId": 3,
+            "name": "Dirty Underwear Donation",
+            "politicianId": 4,
+            "pacId": 1
+        },
+        {
+            "donationId": 4,
+            "name": "Pizza Party Donation",
+            "politicianId": 2,
+            "pacId": 2
+        }
+    ],
+    "Politicians": [
+        {
+            "politicianId": 1,
+            "name": "Brett Shearin",
+            "legislativeBillId": 1
+        },
+        {
+            "politicianId": 2,
+            "name": "Jordan Williams",
+            "legislativeBillId": 3
+        },
+        {
+            "politicianId": 3,
+            "name": "Austin Powers",
+            "legislativeBillId": 2
+        },
+        {
+            "politicianId": 4,
+            "name": "Jack Bob",
+            "legislativeBillId": 1
+        }
+    ],
+    "Corporations": [
+        {
+            "corporationId": 1,
+            "name": "The Derek Zoolander Center for Kids Who Can't Read Good and Want to Learn How to Do Other Stuff Good Too"
+        },
+        {
+            "corporationId": 2,
+            "name": "The Corporation for Slack Addicts"
+        },
+        {
+            "corporationId": 3,
+            "name": "Yeet Inc"
+        },
+        {
+            "corporationId": 4,
+            "name": "Fact Checkers USA"
+        }
+    ],
+    "CorporateDonations": [
+        {
+            "corporateDonationId": 1,
+            "name": "22 Jump Street",
+            "corporationId": 1,
+            "pacId": 2,
+            "date": "01/01/01"
+        },
+        {
+            "corporateDonationId": 2,
+            "name": "Corporate Rules the World",
+            "corporationId": 4,
+            "pacId": 3,
+            "date": "02/02/02"
+        },
+        {
+            "corporateDonationId": 3,
+            "name": "Lime Wire",
+            "corporationId": 2,
+            "pacId": 1,
+            "date": "03/03/03"
+        }
+    ],
+    "PoliticalActionCommitties":[
+        {
+            "pacId": 1,
+            "name": "PAC"
+        },
+        {
+            "pacId": 2,
+            "name": "Chum Bucket"
+        },
+        {
+            "pacId": 3,
+            "name": "Legalized Bribery"
+        }
+    ]
+}
