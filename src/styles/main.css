@@ -1,5 +1,15 @@
-.politician {
-    border: black, 1px, solid
-    margin: 5px
+* {
+    background-color: aliceblue;
 }
+
+.politician {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 5px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 25%;
+    padding: 20px;
+}
+
 

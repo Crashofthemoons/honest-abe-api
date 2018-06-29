@@ -1,56 +1,53 @@
 const HonestAbeApi = require("./getThatApi")
 const $ = require("jquery")
 
-HonestAbeApi.getPolitician().then((response) => {
-    console.log(response)
-    response.forEach(politician => {
-        let polId = politician.politicianId
-        let polName = politician.name
-        let polBill = politician.legislativeBillId
+{/* <article class="politician">
+    <header class="politician__name">
+        <h1>Abby Fleming</h1>
+    </header>
+    <section class="politician__bills">
+        <h3>Sponsored Bills</h3>
+        <div>
+            <h4>S. 2325: Northern Mariana Islands U.S. Workforce Act</h4>
+            <ul>
+                <li>Employment</li>
+                <li>Energy</li>
+                <li>Natural Resources</li>
+            </ul>
+        </div>
+    </section>
+    <section class="politician__influencers">
+        <h3>Related PACs</h3>
+        <ul>
+            <li>American Gas Association</li>
+            <li>League of Conservation Voters Action Fund</li>
+        </ul>
+    </section>
+</article> */}
 
-        console.log(polName)
-        let $politicianArticle = $("<article>")
-        $politicianArticle.addClass("politician").appendTo("body")
-
-        let $politicianHeader = $("<header>")
-        $politicianHeader.addClass("politician__name")
-        let $politicianH1 = $("<h1>")
-        $politicianH1.text(`Politician: ${polName}`).appendTo($politicianHeader)
-        $politicianHeader.appendTo($politicianArticle)
-
-        HonestAbeApi.getBills().then((response) => {
-            response.forEach(bill => {
-                let billId = bill.legislativeBillId
-                let billName = bill.name
-                let billCorpId = bill.corporationId
-
-                if (billId === polBill) {
-                    let $billSection = $("<section>")
-                    $billSection.addClass("politician__bills").appendTo($politicianArticle)
-                    let $billH3 = $("<h3>")
-                    $billH3.text("Sponsored Bills").appendTo($billSection)
-                    let $bill = $("<h4>")
-                    $bill.text(`Bills: ${billName}`).appendTo($billSection)
-                }
+HonestAbeApi.getPolitician().then((politicianArray) => {
+    politicianArray.forEach(politician => {
+        let polId = politician.id
+        console.log(polId)
+        $("#main").append($(`<article class='politician' id=${polId}><h1>${politician.name}</h1></article>`))
+        HonestAbeApi.getBills(polId).then((billArray) => {
+            $(`#${polId}`).append($("<section class='politician__bills'><h3>Sponsored Bills</h3></section>"))
+            billArray.forEach(billObject =>{
+                console.log(billObject.legislativeBill.name)
+                $(`#${polId}`).append($(`<h4>${billObject.legislativeBill.name}</h4>`))
             })
         })
-        HonestAbeApi.getDonations().then((response) => {
-            response.forEach(donation => {
-                let donationId = donation.donationId
-                let donName = donation.name
-                let donPolId = donation.politicianId
-                let donPacId = donation.donPacId
-
-                if (donPolId === polId) {
-                    let $pacSection = $("<section>")
-                    $pacSection.addClass("politician__influencers").appendTo($politicianArticle)
-                    let $pacH3 = $("<h3>")
-                    $pacH3.text("Related PACs").appendTo($pacSection)
-                    let $pac = $("<h4>")
-                    $pac.text(donName).appendTo($pacSection)
-                }
+        HonestAbeApi.getDonations(polId).then((donationArray) => {
+            $(`#${polId}`).append($("<section class='politician_influencers'><h3>RelatedPacs</h3></section>"))
+            donationArray.forEach(donationObject => {
+                let donId = donationObject.donationId
+                console.log(donId)
+                HonestAbeApi.getPacId(donId).then((pacAndDonArray) => {
+                    pacAndDonArray.forEach(pacObject => {
+                        $(`#${polId}`).append($(`<h4>${pacObject.pac.name}</h4>`))
+                    })
+                })
             })
         })
     })
-
 })

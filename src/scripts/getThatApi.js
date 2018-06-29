@@ -8,8 +8,8 @@ const HonestAbeApi = Object.create({}, {
     }
   },
   "getDonations": {
-    value: function() {
-        return $.ajax("http://localhost:3000/Donations") //get donations
+    value: function(polId) {
+        return $.ajax(`http://localhost:3000/PoliticiansAndDonations?_expand=donation&politicianId=${polId}`) //get donations
     }
   },
   "getCorporateDonations": {
@@ -18,8 +18,18 @@ const HonestAbeApi = Object.create({}, {
     }
   },
   "getBills": {
-    value: function() {
-      return $.ajax("http://localhost:3000/LegislativeBills") //get legislative bills
+    value: function(polId) {
+      return $.ajax(`http://localhost:3000/PoliticiansAndBills?_expand=legislativeBill&politicianId=${polId}`)
+    }
+  },
+  "getPacId": {
+    value: function(donId) {
+      return $.ajax(`http://localhost:3000/pacAndDonations?_expand=pac&donationId=${donId}`)
+    }
+  },
+  "getPacs": {
+    value: function(pacId) {
+      return $.ajax(`http://localhost:3000/pacs?id=${pacId}`)
     }
   }
 })

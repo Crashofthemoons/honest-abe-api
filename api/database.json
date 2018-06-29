@@ -1,121 +1,200 @@
 {
-    "LegislativeBills": [
+    "legislativeBills": [
         {
-            "legislativeBillId": 1,
-            "name": "Emancipation Proclamation",
-            "corporationId": 1
+            "id": 1,
+            "name": "Emancipation Proclamation"
         },
         {
-            "legislativeBillId": 2,
-            "name": "Billy Bob Bill",
-            "corporationId": 2
+            "id": 2,
+            "name": "Billy Bob Bill"
         },
         {
-            "legislativeBillId": 3,
-            "name": "Clinton Bill",
-            "corporationId": 3
+            "id": 3,
+            "name": "Clinton Bill"
         }
     ],
-    "Donations": [
+    "billsAndCorporations": [
         {
-            "donationId": 1,
-            "name": "The Get Bret to Update his Slack Picture",
-            "politicianId": 1,
-            "pacId": 1
+            "corporationId": 1,
+            "legislativeBillId": 2
         },
         {
-            "donationId": 2,
-            "name": "Nay Nay",
+            "corporationId": 2,
+            "legislativeBillId": 1
+        },
+        {
+            "corporationId": 3,
+            "legislativeBillId": 3
+        },
+        {
+            "corporationId": 4,
+            "legislativeBillId": 3
+        }
+    ],
+    "donations": [
+        {
+            "id": 1,
+            "name": "The Get Bret to Update his Slack Picture"
+        },
+        {
+            "id": 2,
+            "name": "Nay Nay"
+        },
+        {
+            "id": 3,
+            "name": "Dirty Underwear Donation"
+        },
+        {
+            "id": 4,
+            "name": "Pizza Party Donation"
+        }
+    ],
+    "politiciansAndDonations": [
+        {
+            "politicianId": 1,
+            "donationId": 1
+        },
+        {
             "politicianId": 3,
-            "pacId": 3
+            "donationId": 2
         },
         {
-            "donationId": 3,
-            "name": "Dirty Underwear Donation",
             "politicianId": 4,
-            "pacId": 1
+            "donationId": 3
         },
         {
-            "donationId": 4,
-            "name": "Pizza Party Donation",
             "politicianId": 2,
-            "pacId": 2
+            "donationId": 4
         }
     ],
-    "Politicians": [
+    "pacAndDonations": [
+        {
+            "pacId": 1,
+            "donationId": 1
+        },
+        {
+            "pacId": 3,
+            "donationId": 2
+        },
+        {
+            "pacId": 3,
+            "donationId": 3
+        },
+        {
+            "pacId": 2,
+            "donationId": 4
+        }
+    ],
+    "politicians": [
+        {
+            "id": 1,
+            "name": "Brett Shearin"
+        },
+        {
+            "id": 2,
+            "name": "Jordan Williams"
+        },
+        {
+            "id": 3,
+            "name": "Austin Powers"
+        },
+        {
+            "id": 4,
+            "name": "Jack Bob"
+        }
+    ],
+    "politiciansAndBills": [
         {
             "politicianId": 1,
-            "name": "Brett Shearin",
             "legislativeBillId": 1
         },
         {
             "politicianId": 2,
-            "name": "Jordan Williams",
             "legislativeBillId": 3
         },
         {
             "politicianId": 3,
-            "name": "Austin Powers",
             "legislativeBillId": 2
         },
         {
             "politicianId": 4,
-            "name": "Jack Bob",
             "legislativeBillId": 1
         }
     ],
-    "Corporations": [
+    "corporations": [
         {
-            "corporationId": 1,
+            "id": 1,
             "name": "The Derek Zoolander Center for Kids Who Can't Read Good and Want to Learn How to Do Other Stuff Good Too"
         },
         {
-            "corporationId": 2,
+            "id": 2,
             "name": "The Corporation of Slack Addicts"
         },
         {
-            "corporationId": 3,
+            "id": 3,
             "name": "Yeet Inc"
         },
         {
-            "corporationId": 4,
+            "id": 4,
             "name": "Fact Checkers USA"
         }
     ],
-    "CorporateDonations": [
+    "corporateDonations": [
         {
-            "corporateDonationId": 1,
+            "id": 1,
             "name": "22 Jump Street",
-            "corporationId": 1,
-            "pacId": 2,
             "date": "01/01/01"
         },
         {
-            "corporateDonationId": 2,
+            "id": 2,
             "name": "Corporate Rules the World",
-            "corporationId": 4,
-            "pacId": 3,
             "date": "02/02/02"
         },
         {
-            "corporateDonationId": 3,
+            "id": 3,
             "name": "Lime Wire",
-            "corporationId": 2,
-            "pacId": 1,
             "date": "03/03/03"
         }
     ],
-    "PoliticalActionCommitties":[
+    "corporateDonationsAndCorporations": [
         {
-            "pacId": 1,
+            "corporateDonationId": 1,
+            "corporationId": 1
+        },
+        {
+            "corporateDonationId": 2,
+            "corporationId": 4
+        },
+        {
+            "corporateDonationId": 3,
+            "corporationId": 2
+        }
+    ],
+    "corporateDonationsAndPac": [
+        {
+            "corporateDonationId": 1,
+            "pacId": 2
+        },
+        {
+            "corporateDonationId": 2,
+            "pacId": 3
+        },
+        {
+            "corporateDonationId": 3,
+            "pacId": 1
+        }
+    ],
+    "pacs":[
+        {
+            "id": 1,
             "name": "PAC"
         },
         {
-            "pacId": 2,
+            "id": 2,
             "name": "Chum Bucket"
         },
         {
-            "pacId": 3,
+            "id": 3,
             "name": "Legalized Bribery"
         }
     ]
